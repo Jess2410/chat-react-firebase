@@ -5,7 +5,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, storage, db } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore"; 
-import {useNavigate} from "react-router-dom"
+import {useNavigate, Link} from "react-router-dom"
 
 export default function Register() {
 
@@ -73,7 +73,7 @@ const handleSubmit = async (e) => {
                 </label>
                 <button>Sign Up</button>
                 {err &&<span>Something went wrong</span>}
-            <p>You do have an account ? Login</p>
+            <p>You do have an account ? <Link to='/login'>Login</Link></p>
             </form>
         </div>
     </div>
